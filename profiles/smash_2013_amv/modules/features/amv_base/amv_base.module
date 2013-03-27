@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AMV Base feature.
+ */
+
+include_once 'amv_base.features.inc';
