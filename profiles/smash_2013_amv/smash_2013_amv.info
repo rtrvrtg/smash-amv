@@ -1,0 +1,143 @@
+; Packaging information for smash_2013_amv
+name = "SMASH! 2013 AMV"
+description = "AMV site setup"
+exclusive = "1"
+core = "7.x"
+; ----------
+; Dependencies
+; ----------
+; Amazon S3
+dependencies[] = amazons3
+; Chaos tool suite
+dependencies[] = ctools
+; Core
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = shortcut
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = toolbar
+dependencies[] = update
+dependencies[] = user
+; Display Suite
+dependencies[] = ds
+dependencies[] = ds_extras
+dependencies[] = ds_ui
+; Libraries
+dependencies[] = awssdk
+dependencies[] = awssdk_ui
+; Media
+dependencies[] = file_entity
+dependencies[] = media
+; Other
+dependencies[] = amazons3_cors
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = libraries
+dependencies[] = mediaelement
+; Rules
+dependencies[] = rules
+dependencies[] = rules_admin
+; User interface
+dependencies[] = jquery_update
+; Views
+dependencies[] = views
+dependencies[] = views_ui
+; Voting
+dependencies[] = fivestar
+dependencies[] = votingapi
+
+; ----------
+; Variables
+; ----------
+variables[additional_settings__active_tab_amv] = 'edit-menu'
+variables[admin_theme] = 'seven'
+variables[amazons3_bucket] = 'smashamv'
+variables[amazons3_hostname] = 'beta.anchortrove.com'
+variables[aws_account_id] = 'retrovertigo'
+variables[aws_canonical_id] = 'retrovertigo'
+variables[aws_canonical_name] = 'retrovertigo'
+variables[aws_key] = '2BM5847WO3BJX4W7GSQI'
+variables[aws_secret] = 'wYYrwWX3rEKlBV0iAKU77mgH4DyAr81PwD2IlyPJ'
+variables[date_default_timezone] = 'Australia/Sydney'
+variables[field_bundle_settings_file__audio][extra_fields][display][file][media_small] = array (
+  'weight' => 0,
+  'visible' => false,
+)
+variables[field_bundle_settings_file__default][extra_fields][display][file][media_small] = array (
+  'weight' => 0,
+  'visible' => false,
+)
+variables[field_bundle_settings_file__image][extra_fields][display][file][media_small] = array (
+  'weight' => 0,
+  'visible' => false,
+)
+variables[field_bundle_settings_file__video][extra_fields][display][file][media_small] = array (
+  'weight' => 0,
+  'visible' => false,
+)
+variables[field_bundle_settings_node__amv][view_modes][teaser][custom_settings] = true
+variables[field_bundle_settings_node__amv][view_modes][full][custom_settings] = false
+variables[field_bundle_settings_node__amv][view_modes][rss][custom_settings] = false
+variables[field_bundle_settings_node__amv][view_modes][revision][custom_settings] = false
+variables[field_bundle_settings_node__amv][extra_fields][form][title][weight] = '-5'
+variables[filter_fallback_format] = 'plain_text'
+variables[menu_parent_amv] = 'main-menu:0'
+variables[node_admin_theme] = '1'
+variables[node_options_page][0] = 'status'
+variables[node_preview_amv] = '1'
+variables[rules_empty_sets][node_insert] = 0
+variables[rules_empty_sets][node_update] = 1
+variables[rules_empty_sets][node_presave] = 2
+variables[rules_empty_sets][node_view] = 3
+variables[rules_empty_sets][node_delete] = 4
+variables[rules_empty_sets][init] = 5
+variables[rules_empty_sets][cron] = 6
+variables[rules_empty_sets][watchdog] = 7
+variables[rules_empty_sets][user_insert] = 8
+variables[rules_empty_sets][user_update] = 9
+variables[rules_empty_sets][user_presave] = 10
+variables[rules_empty_sets][user_view] = 11
+variables[rules_empty_sets][user_delete] = 12
+variables[rules_empty_sets][user_login] = 13
+variables[rules_empty_sets][user_logout] = 14
+variables[rules_empty_sets][taxonomy_term_insert] = 15
+variables[rules_empty_sets][taxonomy_term_update] = 16
+variables[rules_empty_sets][taxonomy_term_presave] = 17
+variables[rules_empty_sets][taxonomy_term_delete] = 18
+variables[rules_empty_sets][taxonomy_vocabulary_insert] = 19
+variables[rules_empty_sets][taxonomy_vocabulary_update] = 20
+variables[rules_empty_sets][taxonomy_vocabulary_presave] = 21
+variables[rules_empty_sets][taxonomy_vocabulary_delete] = 22
+variables[save_continue_amv] = 'Save and add fields'
+variables[storage_core_bridge_fields][0] = 'field_image'
+variables[storage_core_bridge_fields][1] = 'field_video'
+variables[theme_default] = 'bartik'
+variables[update_last_email_notification] = 1363238667
+variables[user_pictures] = '1'
+variables[user_picture_dimensions] = '1024x1024'
+variables[user_picture_file_size] = '800'
+variables[user_picture_style] = 'thumbnail'
+variables[user_register] = 2
+variables[votingapi_anonymous_window] = '604800'
+variables[votingapi_calculation_schedule] = 'cron'
+variables[votingapi_last_cron] = 1364384476
+variables[votingapi_user_window] = '-1'
+
