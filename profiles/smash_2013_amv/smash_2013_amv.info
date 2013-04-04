@@ -1,6 +1,6 @@
 ; Packaging information for smash_2013_amv
 name = "SMASH! 2013 AMV"
-description = "AMV site setup"
+description = "Submit your AMVs and win!"
 exclusive = "1"
 core = "7.x"
 ; ----------
@@ -29,6 +29,7 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = path
 dependencies[] = rdf
+dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = system
 dependencies[] = taxonomy
@@ -52,6 +53,7 @@ dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = libraries
 dependencies[] = mediaelement
+dependencies[] = strongarm
 ; Rules
 dependencies[] = rules
 dependencies[] = rules_admin
@@ -63,24 +65,20 @@ dependencies[] = views_ui
 ; Voting
 dependencies[] = fivestar
 dependencies[] = votingapi
+; Features
+dependencies[] = features
+dependencies[] = amv_base
 
 ; ----------
 ; Variables
 ; ----------
 variables[additional_settings__active_tab_amv] = 'edit-menu'
 variables[admin_theme] = 'seven'
-variables[amazons3_bucket] = 'smashamv'
-variables[amazons3_hostname] = 'beta.anchortrove.com'
-variables[aws_account_id] = 'retrovertigo'
-variables[aws_canonical_id] = 'retrovertigo'
-variables[aws_canonical_name] = 'retrovertigo'
-variables[aws_key] = '2BM5847WO3BJX4W7GSQI'
-variables[aws_secret] = 'wYYrwWX3rEKlBV0iAKU77mgH4DyAr81PwD2IlyPJ'
 variables[date_default_timezone] = 'Australia/Sydney'
-variables[field_bundle_settings_file__audio][extra_fields][display][file][media_small] = array (
-  'weight' => 0,
-  'visible' => false,
-)
+variables[date_format_video_format] = 'j F Y'
+variables[default_nodes_main] = '10'
+variables[features_ignored_orphans][image] = 'image'
+variables[field_bundle_settings_file__audio][extra_fields][display][file][media_small] = 'array ('
 variables[field_bundle_settings_file__default][extra_fields][display][file][media_small] = array (
   'weight' => 0,
   'visible' => false,
@@ -93,12 +91,12 @@ variables[field_bundle_settings_file__video][extra_fields][display][file][media_
   'weight' => 0,
   'visible' => false,
 )
-variables[field_bundle_settings_node__amv][view_modes][teaser][custom_settings] = true
-variables[field_bundle_settings_node__amv][view_modes][full][custom_settings] = false
-variables[field_bundle_settings_node__amv][view_modes][rss][custom_settings] = false
-variables[field_bundle_settings_node__amv][view_modes][revision][custom_settings] = false
-variables[field_bundle_settings_node__amv][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__amv][view_modes][full][custom_settings] = 'false'
+variables[field_bundle_settings_node__amv][view_modes][rss][custom_settings] = 'false'
+variables[field_bundle_settings_node__amv][view_modes][revision][custom_settings] = 'false'
+variables[field_bundle_settings_node__amv][extra_fields][form][title][weight] = '0'
 variables[filter_fallback_format] = 'plain_text'
+variables[mediaelement_sitewide] = 1
 variables[menu_parent_amv] = 'main-menu:0'
 variables[node_admin_theme] = '1'
 variables[node_options_page][0] = 'status'
@@ -127,17 +125,18 @@ variables[rules_empty_sets][taxonomy_vocabulary_update] = 20
 variables[rules_empty_sets][taxonomy_vocabulary_presave] = 21
 variables[rules_empty_sets][taxonomy_vocabulary_delete] = 22
 variables[save_continue_amv] = 'Save and add fields'
+variables[site_frontpage] = 'amvs'
 variables[storage_core_bridge_fields][0] = 'field_image'
 variables[storage_core_bridge_fields][1] = 'field_video'
-variables[theme_default] = 'bartik'
-variables[update_last_email_notification] = 1363238667
+variables[theme_default] = 'smash_minisite_theme'
+variables[update_last_email_notification] = 1365074072
 variables[user_pictures] = '1'
 variables[user_picture_dimensions] = '1024x1024'
 variables[user_picture_file_size] = '800'
 variables[user_picture_style] = 'thumbnail'
-variables[user_register] = 2
+variables[user_register] = '2'
 variables[votingapi_anonymous_window] = '604800'
 variables[votingapi_calculation_schedule] = 'cron'
-variables[votingapi_last_cron] = 1364384476
+variables[votingapi_last_cron] = 1365085251
 variables[votingapi_user_window] = '-1'
 

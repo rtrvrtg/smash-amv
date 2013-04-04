@@ -1,7 +1,6 @@
 <?php
   !function_exists('profiler_v2') ? require_once('libraries/profiler/profiler.inc') : FALSE;
   profiler_v2('smash_2013_amv');
-
 /**
  * Implements hook_install().
  *
@@ -9,7 +8,7 @@
  */
 function smash_2013_amv_install() {
   // Enable some smash_2013_amv blocks.
-  $default_theme = 'bartik';
+  $default_theme = 'smash_minisite_theme';
   $admin_theme = 'seven';
   // disable all themes
   db_update('system')
@@ -284,6 +283,11 @@ function smash_2013_amv_install() {
     ->execute();
   // Update the menu router information.
   menu_rebuild();
+  // revert features to ensure they are all installed
+  $features = array(
+    'amv_base'
+  );
+  features_revert($features);
   // ignore any rebuild messages
   node_access_needs_rebuild(FALSE);
   // ignore any other install messages
