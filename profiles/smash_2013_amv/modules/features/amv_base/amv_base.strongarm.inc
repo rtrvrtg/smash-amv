@@ -16,23 +16,20 @@ function amv_base_strongarm() {
   $strongarm->name = 'field_bundle_settings_node__amv';
   $strongarm->value = array(
     'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
-      ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => 'false',
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => 'false',
       ),
       'revision' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => 'false',
       ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
       ),
       'display' => array(),

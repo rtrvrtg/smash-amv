@@ -32,10 +32,15 @@ function amv_base_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'amv';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'post_date' => array(
+    'title' => array(
       'weight' => '1',
       'label' => 'hidden',
-      'format' => 'ds_post_date_short',
+      'format' => 'default',
+    ),
+    'post_date' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_video_format',
     ),
   );
   $export['node|amv|teaser'] = $ds_fieldsetting;
@@ -103,16 +108,18 @@ function amv_base_ds_layout_settings_info() {
         0 => 'field_video',
       ),
       'right' => array(
-        1 => 'post_date',
-        2 => 'field_rating',
-        3 => 'body',
-        4 => 'field_song',
-        5 => 'field_artist',
-        6 => 'field_series',
+        1 => 'title',
+        2 => 'post_date',
+        3 => 'field_rating',
+        4 => 'body',
+        5 => 'field_song',
+        6 => 'field_artist',
+        7 => 'field_series',
       ),
     ),
     'fields' => array(
       'field_video' => 'left',
+      'title' => 'right',
       'post_date' => 'right',
       'field_rating' => 'right',
       'body' => 'right',
@@ -122,10 +129,10 @@ function amv_base_ds_layout_settings_info() {
     ),
     'classes' => array(),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'left' => 'section',
+      'right' => 'aside',
     ),
-    'layout_wrapper' => 'div',
+    'layout_wrapper' => 'article',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
   );
