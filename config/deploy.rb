@@ -95,7 +95,7 @@ end
 task :fix_perms do
   set_ownership("#{shared_path}")
 end
-before 'deploy:update', :create_log_share
+before 'deploy:update', :fix_perms
 
 task :uname do
   run "uname -a"
