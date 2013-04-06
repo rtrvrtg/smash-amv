@@ -2,6 +2,7 @@ server 'linode.smash.org.au', :app, :web, :primary => true
 set :deploy_to, '/var/www/smash.org.au/amv'
 set :db_name, "amv_production"
 set :url,     "http://amv.smash.org.au"
+set :filecache_name, 'amv-production'
 
 set(:releases_path)     { File.join(deploy_to, version_dir) }
 set(:shared_path)       { File.join(deploy_to, shared_dir) }

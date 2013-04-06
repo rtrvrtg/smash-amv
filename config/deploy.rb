@@ -138,7 +138,7 @@ namespace :drush do
     cache_cfg = <<END
 $conf['cache_backends'] = array('sites/all/modules/contrib/filecache/filecache.inc');
 $conf['cache_default_class'] = 'DrupalFileCache';
-$conf['filecache_directory'] = '/tmp/filecache-' . substr(conf_path(), 6);
+$conf['filecache_directory'] = '/tmp/filecache-#{filecache_name}-' . substr(conf_path(), 6);
 END
 
     settings_path = "#{shared_path}/sites-default/settings.php"
@@ -152,14 +152,6 @@ END
         end
       end
       set_chmod(settings_path, "444")
-    end
-  end
-  
-  # Append caching stuff
-  task :setup_files, :roles => :web do
-    if is_drupal_installed?
-      set_ownership("#{shared_path}/sites-default/private", true, true)
-      set_ownership("#{shared_path}/sites-default/files", true, true)
     end
   end
   
@@ -194,6 +186,14 @@ namespace :drupal do
       set_ownership "#{shared_path}/sites-default"
       run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
     end
+    if !remote_file_exists? "#{shared_path}/sites-default/files"
+      set_ownership "#{shared_path}/sites-default/files"
+    end
+    if !remote_file_exists? "#{shared_path}/sites-default/private"
+      set_ownership "#{shared_path}/sites-default/private"
+      set_ownership "#{shared_path}/sites-default/private/temp"
+      set_ownership "#{shared_path}/sites-default/private/files"
+    end
     run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
   end
@@ -210,7 +210,6 @@ after "deploy:finalize_update", "drush:run_makefile"
 after "deploy:finalize_update", "drupal:create_symlinks"
 after "deploy:finalize_update", "drush:install_site"
 after "deploy:finalize_update", "drush:run_updates"
-after "deploy:finalize_update", "drush:setup_files"
 after "deploy:finalize_update", "drush:setup_filecache"
 
 # Cap the number of checked-out revisions.
