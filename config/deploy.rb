@@ -91,6 +91,12 @@ namespace :deploy do
   end
 end
 
+# Fix capistrano's stupid sucky permissions stuff
+task :fix_perms do
+  set_ownership("#{shared_path}")
+end
+before 'deploy:update', :create_log_share
+
 task :uname do
   run "uname -a"
 end
