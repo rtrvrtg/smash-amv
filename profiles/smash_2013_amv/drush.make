@@ -2,6 +2,8 @@
 core = "7.x"
 api = "2"
 
+projects[drupal][version] = "7.x"
+
 ; +++++ Modules +++++
 
 projects[AmazonS3][version] = "1.x-dev"
