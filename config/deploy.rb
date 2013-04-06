@@ -182,6 +182,7 @@ namespace :drupal do
   # The task below serves the purpose of creating symlinks for asset files.
   # User uploaded content and logs should not be checked into the repository; move them to a shared location.
   task :create_symlinks, :roles => :web do
+    set_chmod("#{shared_path}/sites-default", "2775")
     if !remote_file_exists? "#{shared_path}/sites-default"
       set_ownership "#{shared_path}/sites-default"
       run "mv #{current_release}/sites/default/* #{shared_path}/sites-default"
@@ -190,10 +191,11 @@ namespace :drupal do
       set_ownership "#{shared_path}/sites-default/files"
     end
     if !remote_file_exists? "#{shared_path}/sites-default/private"
-      set_ownership "#{shared_path}/sites-default/private"
-      set_ownership "#{shared_path}/sites-default/private/temp"
-      set_ownership "#{shared_path}/sites-default/private/files"
+      set_ownership("#{shared_path}/sites-default/private", false, true)
+      set_ownership("#{shared_path}/sites-default/private/temp", false, true)
+      set_ownership("#{shared_path}/sites-default/private/files", false, true)
     end
+    set_chmod("#{shared_path}/sites-default", "555")
     run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
   end
