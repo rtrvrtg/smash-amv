@@ -6,7 +6,6 @@ api = "2"
 
 projects[AmazonS3][version] = "1.x-dev"
 projects[AmazonS3][subdir] = "contrib"
-projects[AmazonS3][patch][] = "http://blackicemedia.com/code/patches/amazons3-compatible-hosts.patch"
 
 projects[ctools][version] = "1.3"
 projects[ctools][subdir] = "contrib"
@@ -28,6 +27,7 @@ projects[media][subdir] = "contrib"
 
 projects[amazons3_cors][version] = "1.x-dev"
 projects[amazons3_cors][subdir] = "contrib"
+projects[libraries][patch][] = "http://blackicemedia.com/code/patches/amazons3-cors-lib-path.patch"
 
 projects[entity][version] = "1.0"
 projects[entity][subdir] = "contrib"
@@ -44,9 +44,6 @@ projects[strongarm][subdir] = "contrib"
 
 projects[rules][version] = "2.3"
 projects[rules][subdir] = "contrib"
-
-projects[amv_base][version] = "0.1"
-projects[amv_base][subdir] = "contrib"
 
 projects[jquery_update][version] = "2.3"
 projects[jquery_update][subdir] = "contrib"

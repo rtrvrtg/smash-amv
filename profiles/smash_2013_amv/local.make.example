@@ -1,0 +1,31 @@
+; smash_2013_amv make file for local development
+core = "7.x"
+api = "2"
+
+projects[drupal][version] = "7.x"
+; include the d.o. profile base
+includes[] = "drupal-org.make"
+
+; +++++ Libraries +++++
+
+; Profiler
+libraries[profiler][directory_name] = "profiler"
+libraries[profiler][type] = "library"
+libraries[profiler][destination] = "../../profiles/smash_2013_amv/libraries"
+libraries[profiler][download][type] = "get"
+libraries[profiler][download][url] = "http://ftp.drupal.org/files/projects/profiler-7.x-2.x-dev.tar.gz"
+
+; mediaelement
+libraries[mediaelement][directory_name] = "mediaelement"
+libraries[mediaelement][type] = "library"
+libraries[mediaelement][destination] = "libraries"
+libraries[mediaelement][download][type] = "get"
+libraries[mediaelement][download][url] = "" ; TODO add download URI
+
+; awssdk
+libraries[awssdk][directory_name] = "awssdk"
+libraries[awssdk][type] = "library"
+libraries[awssdk][destination] = "libraries"
+libraries[awssdk][download][type] = "get"
+libraries[awssdk][download][url] = "" ; TODO add download URI
+
