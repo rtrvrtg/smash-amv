@@ -29,7 +29,7 @@ projects[media][subdir] = "contrib"
 
 projects[amazons3_cors][version] = "1.x-dev"
 projects[amazons3_cors][subdir] = "contrib"
-projects[libraries][patch][] = "http://blackicemedia.com/code/patches/amazons3-cors-lib-path.patch"
+projects[amazons3_cors][patch][] = "http://blackicemedia.com/code/patches/amazons3-cors-lib-path.patch"
 
 projects[entity][version] = "1.0"
 projects[entity][subdir] = "contrib"
