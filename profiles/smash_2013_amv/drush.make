@@ -3,17 +3,22 @@ core = "7.x"
 api = "2"
 
 projects[drupal][version] = "7.x"
+defaults[projects][subdir] = contrib
 
 ; +++++ Modules +++++
 
-projects[AmazonS3][version] = "1.x-dev"
-projects[AmazonS3][subdir] = "contrib"
+projects[libraries][version] = "2.1"
+projects[libraries][subdir] = "contrib"
+projects[libraries][patch][] = "http://blackicemedia.com/code/patches/libraries-fix-path-clobber.patch"
 
 projects[ctools][version] = "1.3"
 projects[ctools][subdir] = "contrib"
 
 projects[profiler_builder][version] = "1.0-rc4"
 projects[profiler_builder][subdir] = "contrib"
+
+projects[AmazonS3][version] = "1.x-dev"
+projects[AmazonS3][subdir] = "contrib"
 
 projects[ds][version] = "2.2"
 projects[ds][subdir] = "contrib"
@@ -23,6 +28,7 @@ projects[features][subdir] = "contrib"
 
 projects[awssdk][version] = "5.4"
 projects[awssdk][subdir] = "contrib"
+projects[awssdk][recurse] = 0
 
 projects[media][version] = "1.3"
 projects[media][subdir] = "contrib"
@@ -33,10 +39,6 @@ projects[amazons3_cors][patch][] = "http://blackicemedia.com/code/patches/amazon
 
 projects[entity][version] = "1.0"
 projects[entity][subdir] = "contrib"
-
-projects[libraries][version] = "2.1"
-projects[libraries][subdir] = "contrib"
-projects[libraries][patch][] = "http://blackicemedia.com/code/patches/libraries-fix-path-clobber.patch"
 
 projects[mediaelement][version] = "1.2"
 projects[mediaelement][subdir] = "contrib"
