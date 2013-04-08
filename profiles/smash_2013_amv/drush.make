@@ -61,6 +61,12 @@ projects[fivestar][subdir] = "contrib"
 projects[votingapi][version] = "2.11"
 projects[votingapi][subdir] = "contrib"
 
+projects[uuid][version] = "1.x-dev"
+projects[uuid][subdir] = "contrib"
+
+projects[uuid_features][version] = "1.x-dev"
+projects[uuid_features][subdir] = "contrib"
+
 ; +++++ Themes +++++
 
 ; zen

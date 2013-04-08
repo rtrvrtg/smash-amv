@@ -67,6 +67,8 @@ dependencies[] = fivestar
 dependencies[] = votingapi
 ; Features
 dependencies[] = features
+dependencies[] = uuid
+dependencies[] = uuid_features
 dependencies[] = amv_base
 dependencies[] = amv_site_cfg
 dependencies[] = amv_content
