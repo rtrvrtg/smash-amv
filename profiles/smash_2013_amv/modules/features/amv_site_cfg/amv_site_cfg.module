@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AMV Site Config feature.
+ */
+
+include_once 'amv_site_cfg.features.inc';

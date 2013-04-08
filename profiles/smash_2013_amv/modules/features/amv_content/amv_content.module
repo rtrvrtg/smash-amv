@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the AMV Content feature.
+ */
+
+include_once 'amv_content.features.inc';

@@ -385,11 +385,11 @@ function amv_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'amazons3_cors',
       'settings' => array(
         'progress_indicator' => 'bar',
       ),
-      'type' => 'file_generic',
+      'type' => 'amazons3_cors',
       'weight' => 1,
     ),
   );
