@@ -93,8 +93,8 @@ end
 
 # Fix capistrano's stupid sucky permissions stuff
 task :fix_perms do
-  set_ownership("#{shared_path}")
-  set_ownership("#{releases_path}")
+  set_ownership("#{shared_path}", false, true)
+  set_ownership("#{releases_path}", false, true)
 end
 before 'deploy:update', :fix_perms
 
