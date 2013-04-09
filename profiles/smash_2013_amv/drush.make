@@ -19,7 +19,7 @@ projects[profiler_builder][subdir] = "contrib"
 
 projects[AmazonS3][version] = "1.x-dev"
 projects[AmazonS3][subdir] = "contrib"
-projects[AmazonS3][patch][] = "http://blackicemedia.com/code/patches/amazons3-compatible-hosts.patch"
+projects[AmazonS3][patch][] = "http://blackicemedia.com/code/patches/amazons3-fix-constructor.patch"
 
 projects[ds][version] = "2.2"
 projects[ds][subdir] = "contrib"
