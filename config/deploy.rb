@@ -43,8 +43,9 @@ def app_exists?(app_name)
   end
 end
 
-def drush_do(task)
-  run "drush #{task} --root=#{current_release} -l #{url}"
+def drush_do(task, failure_ok = false)
+  suffix = failure_ok == true ? '; true' : ''
+  run "drush #{task} --root=#{current_release} -l #{url} #{suffix}"
 end
 
 def set_ownership(full_path, is_file = false, failure_ok = false)
@@ -158,10 +159,10 @@ END
   # Run drush updates
   task :run_updates, :roles => :web do
     if is_drupal_installed?
-      drush_do("registry-rebuild -y")
+      drush_do("registry-rebuild -y", true)
       drush_do("updb -y")
-      drush_do("features-revert-all -y")
-      drush_do("cron -y")
+      drush_do("features-revert-all -y", true)
+      drush_do("cron -y", true)
     end
   end
   
