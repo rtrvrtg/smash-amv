@@ -25,10 +25,11 @@ function amv_base_field_default_field_instances() {
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'revision' => array(
         'label' => 'above',
@@ -47,7 +48,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -67,7 +68,7 @@ function amv_base_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -86,10 +87,11 @@ function amv_base_field_default_field_instances() {
         'weight' => 5,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 6,
       ),
       'revision' => array(
         'label' => 'above',
@@ -108,7 +110,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -126,7 +128,7 @@ function amv_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -152,10 +154,18 @@ function amv_base_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'hidden',
+        'module' => 'fivestar',
+        'settings' => array(
+          'expose' => 1,
+          'style' => 'average',
+          'text' => 'average',
+          'widget' => array(
+            'fivestar_widget' => 'sites/all/modules/contrib/fivestar/widgets/oxygen/oxygen.css',
+          ),
+        ),
+        'type' => 'fivestar_formatter_default',
+        'weight' => 3,
       ),
       'revision' => array(
         'label' => 'above',
@@ -181,7 +191,7 @@ function amv_base_field_default_field_instances() {
           ),
         ),
         'type' => 'fivestar_formatter_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -199,7 +209,7 @@ function amv_base_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -218,10 +228,11 @@ function amv_base_field_default_field_instances() {
         'weight' => 6,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 7,
       ),
       'revision' => array(
         'label' => 'above',
@@ -240,7 +251,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -258,7 +269,7 @@ function amv_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -277,10 +288,11 @@ function amv_base_field_default_field_instances() {
         'weight' => 4,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'revision' => array(
         'label' => 'above',
@@ -299,7 +311,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -317,33 +329,36 @@ function amv_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-amv-field_video'
-  $field_instances['node-amv-field_video'] = array(
+  // Exported field_instance: 'node-amv-field_video_display'
+  $field_instances['node-amv-field_video_display'] = array(
     'bundle' => 'amv',
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The format that we need you to upload for preview is MP4 (H.264 video, AAC audio). Try using <a href="http://handbrake.fr/" target="_blank">Handbrake</a> to run the conversion, and the output should be a maximum of 1280×720 pixels in size (720P). Ask us if you want some help setting this up.',
+    'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'mediaelement',
-        'settings' => array(
-          'controls' => TRUE,
-          'download_link' => FALSE,
-          'download_text' => 'Download',
-          'height' => 385,
-          'width' => 640,
-        ),
-        'type' => 'mediaelement_video',
-        'weight' => 0,
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 7,
       ),
       'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'mediaelement_sourced_link',
+        'settings' => array(
+          'controls' => 1,
+          'download_link' => 0,
+          'download_text' => 'Download',
+          'height' => 400,
+          'type' => 'video/mp4',
+          'width' => '100%',
+        ),
+        'type' => 'mediaelement_sourced_video',
         'weight' => 0,
       ),
       'revision' => array(
@@ -360,36 +375,120 @@ function amv_base_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'mediaelement',
+        'module' => 'mediaelement_sourced_link',
         'settings' => array(
-          'controls' => TRUE,
-          'download_link' => FALSE,
+          'controls' => 1,
+          'download_link' => 0,
           'download_text' => 'Download',
-          'height' => 385,
-          'width' => 640,
+          'height' => 400,
+          'type' => 'video/mp4',
+          'width' => '100%',
         ),
-        'type' => 'mediaelement_video',
+        'type' => 'mediaelement_sourced_video',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_display',
+    'label' => 'Video Display',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-amv-field_video_source'
+  $field_instances['node-amv-field_video_source'] = array(
+    'bundle' => 'amv',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'revision' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video',
-    'label' => 'Video',
-    'required' => 1,
+    'field_name' => 'field_video_source',
+    'label' => 'Video Source',
+    'required' => 0,
     'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'mp4 m4v',
-      'max_filesize' => '200 MB',
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'amazons3_cors',
-      'settings' => array(
-        'progress_indicator' => 'bar',
-      ),
-      'type' => 'amazons3_cors',
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
       'weight' => 1,
     ),
   );
@@ -403,8 +502,8 @@ function amv_base_field_default_field_instances() {
   t('Series');
   t('Song');
   t('Specify which series the video is sourced from.');
-  t('The format that we need you to upload for preview is MP4 (H.264 video, AAC audio). Try using <a href="http://handbrake.fr/" target="_blank">Handbrake</a> to run the conversion, and the output should be a maximum of 1280×720 pixels in size (720P). Ask us if you want some help setting this up.');
-  t('Video');
+  t('Video Display');
+  t('Video Source');
   t('Which artist, band or group performed the song?');
   t('Which song did you use?');
 

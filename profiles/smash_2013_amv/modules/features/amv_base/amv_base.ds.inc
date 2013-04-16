@@ -33,12 +33,12 @@ function amv_base_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'ds_post_date_video_format',
     ),
@@ -105,7 +105,7 @@ function amv_base_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_video',
+        0 => 'field_video_display',
       ),
       'right' => array(
         1 => 'title',
@@ -118,7 +118,7 @@ function amv_base_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_video' => 'left',
+      'field_video_display' => 'left',
       'title' => 'right',
       'post_date' => 'right',
       'field_rating' => 'right',

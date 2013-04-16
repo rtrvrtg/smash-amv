@@ -1,0 +1,6 @@
+name = MediaElement Sourced Link
+description = Nicer field formatters
+core = 7.x
+
+dependencies[] = link
+dependencies[] = mediaelement
