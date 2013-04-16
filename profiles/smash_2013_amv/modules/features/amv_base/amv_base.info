@@ -5,7 +5,6 @@ package = SMASH!
 php = 5.2.4
 version = 7.x-0.1
 project = amv_base
-dependencies[] = amazons3_cors
 dependencies[] = ds
 dependencies[] = features
 dependencies[] = file

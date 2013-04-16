@@ -6,6 +6,14 @@ projects[drupal][version] = "7.x"
 ; include the d.o. profile base
 includes[] = "drupal-org.make"
 
+; +++++ TODO modules without versions +++++
+
+projects[mediaelement_sourced_link][version] = "" ; TODO add version
+projects[mediaelement_sourced_link][subdir] = "custom"
+
+projects[shov3_file][version] = "" ; TODO add version
+projects[shov3_file][subdir] = "custom"
+
 ; +++++ Libraries +++++
 
 ; Profiler
@@ -28,4 +36,8 @@ libraries[awssdk][type] = "library"
 libraries[awssdk][destination] = "libraries"
 libraries[awssdk][download][type] = "get"
 libraries[awssdk][download][url] = "" ; TODO add download URI
+
+; +++++ Patches +++++
+
+projects[amazons3][patch][] = "amazons3-fix-constructor.patch" ; TODO add path to patch
 

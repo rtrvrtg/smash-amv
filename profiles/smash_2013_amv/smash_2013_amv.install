@@ -285,7 +285,9 @@ function smash_2013_amv_install() {
   menu_rebuild();
   // revert features to ensure they are all installed
   $features = array(
-    'amv_base'
+    'amv_base',
+    'amv_content',
+    'amv_site_cfg'
   );
   features_revert($features);
   // ignore any rebuild messages
@@ -293,8 +295,3 @@ function smash_2013_amv_install() {
   // ignore any other install messages
   drupal_get_messages();
 }
-
-function smash_2013_amv_update_7001() {
-  module_enable(array('amv_content', 'amv_site_cfg'));
-}
-
