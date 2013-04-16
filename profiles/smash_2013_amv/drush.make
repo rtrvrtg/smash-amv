@@ -54,7 +54,7 @@ projects[uuid][subdir] = "contrib"
 projects[jquery_update][version] = "2.3"
 projects[jquery_update][subdir] = "contrib"
 
-projects[views][version] = "3.6"
+projects[views][version] = "3.7"
 projects[views][subdir] = "contrib"
 
 projects[fivestar][version] = "2.0-alpha2"
