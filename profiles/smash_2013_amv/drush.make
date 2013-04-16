@@ -21,17 +21,11 @@ projects[features][subdir] = "contrib"
 projects[uuid_features][version] = "1.0-alpha3"
 projects[uuid_features][subdir] = "contrib"
 
-projects[custom_formatters][version] = "2.2"
-projects[custom_formatters][subdir] = "contrib"
-
 projects[link][version] = "1.1"
 projects[link][subdir] = "contrib"
 
 projects[media][version] = "1.3"
 projects[media][subdir] = "contrib"
-
-projects[diff][version] = "3.2"
-projects[diff][subdir] = "contrib"
 
 projects[entity][version] = "1.0"
 projects[entity][subdir] = "contrib"
