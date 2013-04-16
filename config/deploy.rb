@@ -159,8 +159,8 @@ END
   task :run_updates, :roles => :web do
     if is_drupal_installed?
       drush_do("registry-rebuild -y")
-      drush_do("features-revert-all -y")
       drush_do("updb -y")
+      drush_do("features-revert-all -y")
       drush_do("cron -y")
     end
   end
