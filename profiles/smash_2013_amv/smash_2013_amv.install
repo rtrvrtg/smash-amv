@@ -295,3 +295,7 @@ function smash_2013_amv_install() {
   // ignore any other install messages
   drupal_get_messages();
 }
+
+function smash_2013_amv_update_7002() {
+  module_enable(array('link'));
+}
