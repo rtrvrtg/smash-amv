@@ -48,15 +48,6 @@ projects[strongarm][subdir] = "contrib"
 projects[rules][version] = "2.3"
 projects[rules][subdir] = "contrib"
 
-projects[amv_base][version] = "0.1"
-projects[amv_base][subdir] = "contrib"
-
-projects[amv_content][version] = "0.1"
-projects[amv_content][subdir] = "contrib"
-
-projects[amv_site_cfg][version] = "0.1"
-projects[amv_site_cfg][subdir] = "contrib"
-
 projects[uuid][version] = "1.0-alpha3"
 projects[uuid][subdir] = "contrib"
 
