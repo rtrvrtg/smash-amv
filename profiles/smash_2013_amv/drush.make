@@ -57,6 +57,9 @@ projects[fivestar][subdir] = "contrib"
 projects[votingapi][version] = "2.11"
 projects[votingapi][subdir] = "contrib"
 
+projects[field_permissions][version] = "1.0-beta2"
+projects[field_permissions][subdir] = "contrib"
+
 ; +++++ Themes +++++
 
 ; zen
