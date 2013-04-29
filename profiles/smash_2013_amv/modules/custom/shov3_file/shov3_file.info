@@ -1,5 +1,0 @@
-name = Shov3 File
-description = Provides support for uploading files directly to S3
-core = 7.x
-
-dependencies[] = jquery_update
