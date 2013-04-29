@@ -299,3 +299,7 @@ function smash_2013_amv_install() {
 function smash_2013_amv_update_7002() {
   module_enable(array('link'));
 }
+
+function smash_2013_amv_update_7003() {
+  module_enable(array('email', 'countries', 'countries_configuration'));
+}
