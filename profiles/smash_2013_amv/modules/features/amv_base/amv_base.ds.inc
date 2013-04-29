@@ -53,12 +53,12 @@ function amv_base_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'ds_post_date_video_format',
     ),
@@ -135,6 +135,9 @@ function amv_base_ds_layout_settings_info() {
         5 => 'field_song',
         6 => 'field_artist',
         7 => 'field_series',
+        8 => 'field_entrant_nicknames',
+        9 => 'field_amv_group',
+        10 => 'field_country',
       ),
     ),
     'fields' => array(
@@ -146,6 +149,9 @@ function amv_base_ds_layout_settings_info() {
       'field_song' => 'right',
       'field_artist' => 'right',
       'field_series' => 'right',
+      'field_entrant_nicknames' => 'right',
+      'field_amv_group' => 'right',
+      'field_country' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -178,6 +184,9 @@ function amv_base_ds_layout_settings_info() {
         5 => 'field_song',
         6 => 'field_artist',
         7 => 'field_series',
+        8 => 'field_entrant_nicknames',
+        9 => 'field_amv_group',
+        10 => 'field_country',
       ),
     ),
     'fields' => array(
@@ -189,6 +198,9 @@ function amv_base_ds_layout_settings_info() {
       'field_song' => 'right',
       'field_artist' => 'right',
       'field_series' => 'right',
+      'field_entrant_nicknames' => 'right',
+      'field_amv_group' => 'right',
+      'field_country' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -42,7 +42,7 @@ projects[strongarm][subdir] = "contrib"
 projects[rules][version] = "2.3"
 projects[rules][subdir] = "contrib"
 
-projects[uuid][version] = "1.0-alpha3"
+projects[uuid][version] = "1.0-alpha4"
 projects[uuid][subdir] = "contrib"
 
 projects[jquery_update][version] = "2.3"
@@ -59,6 +59,9 @@ projects[votingapi][subdir] = "contrib"
 
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = "contrib"
+
+projects[email][version] = "1.2"
+projects[email][subdir] = "contrib"
 
 ; +++++ Themes +++++
 

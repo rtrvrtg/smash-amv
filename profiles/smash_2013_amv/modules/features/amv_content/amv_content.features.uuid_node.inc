@@ -31,11 +31,12 @@ function amv_content_uuid_features_default_content() {
     'und' => array(
       0 => array(
         'value' => 'here are the rules',
-        'summary' => '',
+        'summary' => 'Rules and submission guidelines for the SMASH! 2013 AMV Competition.',
         'format' => 'plain_text',
         'safe_value' => '<p>here are the rules</p>
 ',
-        'safe_summary' => '',
+        'safe_summary' => '<p>Rules and submission guidelines for the SMASH! 2013 AMV Competition.</p>
+',
       ),
     ),
   ),

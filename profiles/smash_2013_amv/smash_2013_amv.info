@@ -40,7 +40,7 @@ dependencies[] = ds
 dependencies[] = ds_extras
 dependencies[] = ds_ui
 ; Fields
-dependencies[] = custom_formatters
+dependencies[] = email
 dependencies[] = link
 ; Media
 dependencies[] = file_entity
