@@ -196,7 +196,7 @@ namespace :drupal do
       set_ownership("#{shared_path}/sites-default/private/temp", false, true)
       set_ownership("#{shared_path}/sites-default/private/files", false, true)
     end
-    set_chmod("#{shared_path}/sites-default", "555")
+    #set_chmod("#{shared_path}/sites-default", "555")
     run "rm -rf #{current_release}/sites/default"
     run "ln -s #{shared_path}/sites-default #{current_release}/sites/default"
   end
