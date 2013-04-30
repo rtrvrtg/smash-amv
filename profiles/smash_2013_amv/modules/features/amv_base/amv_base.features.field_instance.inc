@@ -131,66 +131,6 @@ function amv_base_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-amv-field_artist'
-  $field_instances['node-amv-field_artist'] = array(
-    'bundle' => 'amv',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'List the artists who performed the music sources used in your AMV. Enter their names separated by commas; if their names contain a comma, add them in quotes. eg. "Crosby, Stills & Nash" or "They Shoot Horses, Don\'t They"',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 5,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
-      ),
-      'revision' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_artist',
-    'label' => 'Artist',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-amv-field_country'
   $field_instances['node-amv-field_country'] = array(
     'bundle' => 'amv',
@@ -545,7 +485,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'List all the songs/audio sources that were used in your AMV. A new line will appear for each song/audio source used.',
+    'description' => 'List all the songs/audio sources that were used in your AMV, and the artist responsible for performing each one. A new line will appear for each song/audio source used.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -764,7 +704,6 @@ We recommend that you post it on one of the following services: <a href="http://
   // Included for use with string extractors like potx.
   t('AMV Group');
   t('Anime used in AMV');
-  t('Artist');
   t('Country');
   t('Description');
   t('Email Address');
@@ -774,8 +713,7 @@ We recommend that you post it on one of the following services: <a href="http://
   t('It would be great to mention where you come from! This helps us know the demographics of the entrants for this AMV competition!');
   t('Link to Video File');
   t('List all the anime sources used in your AMV, separated by comma. If you\'re submitting a title with a comma in it, please wrap it in quotes. eg. "Kumo no Mukou, Yakusoku no Basho", "Now & Then, Here & There"');
-  t('List all the songs/audio sources that were used in your AMV. A new line will appear for each song/audio source used.');
-  t('List the artists who performed the music sources used in your AMV. Enter their names separated by commas; if their names contain a comma, add them in quotes. eg. "Crosby, Stills & Nash" or "They Shoot Horses, Don\'t They"');
+  t('List all the songs/audio sources that were used in your AMV, and the artist responsible for performing each one. A new line will appear for each song/audio source used.');
   t('Music/Audio Source');
   t('Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.');
   t('Please enter your full name in the following text field. If there are more entrants, a new line will show for each team member that you want to add, so please enter everyone\'s names. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.');
