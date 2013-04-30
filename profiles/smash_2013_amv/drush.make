@@ -63,6 +63,9 @@ projects[field_permissions][subdir] = "contrib"
 projects[email][version] = "1.2"
 projects[email][subdir] = "contrib"
 
+projects[countries][version] = "2.1"
+projects[countries][subdir] = "contrib"
+
 ; +++++ Themes +++++
 
 ; zen
