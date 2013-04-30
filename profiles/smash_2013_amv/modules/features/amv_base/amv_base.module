@@ -11,9 +11,16 @@ function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 
 	drupal_set_title("2013 SMASH! AMV Competition Online Submission Form");
 
+	$rules_link = l(t("Rules"), 'rules');
+	$vars = array(
+		'%three' => t("three"), 
+		'!rules' => filter_xss($rules_link)
+	);
+
 	$form['intro'] = array(
 		'#weight' => -999,
-		'#markup' => '<p>' . t("This is the form for online submissions for the 2013 SMASH! AMV Competition. Please make sure you fill in all the necessary details so we know more about you and your AMVs, as these will help us later on with organisation and judging.") . '</p>',
+		'#markup' => '<p>' . t("This is the form for online submissions for the 2013 SMASH! AMV Competition. Please make sure you fill in all the necessary details so we know more about you and your AMVs, as these will help us later on with organisation and judging.") . '</p>' . 
+		'<p><strong>' . t("Note:") . ' </strong>' . t("You may submit up to %three entries for this competition, just fill in this form for each time you have an AMV to submit. Please consult the !rules for further details.", $vars) . '</p>',
 	);
 
 	$form['title']['#title'] = t('AMV Title');

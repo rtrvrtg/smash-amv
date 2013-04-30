@@ -17,13 +17,25 @@ function amv_base_strongarm() {
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
-        'custom_settings' => 'false',
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => 'false',
+        'custom_settings' => TRUE,
       ),
       'revision' => array(
-        'custom_settings' => 'false',
+        'custom_settings' => TRUE,
+      ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
