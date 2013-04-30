@@ -9,20 +9,134 @@ include_once 'amv_base.features.inc';
 function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 	// drupal_set_message('<pre>' . print_r($form, 1) . '</pre>');
 
-	drupal_set_title("2013 SMASH! AMV Competition Online Submission Form");
+	if (empty($form['nid']['#value'])) {
+		drupal_set_title("2013 SMASH! AMV Competition Online Submission Form");
 
-	$rules_link = l(t("Rules"), 'rules');
-	$vars = array(
-		'%three' => t("three"), 
-		'!rules' => filter_xss($rules_link)
-	);
+		$rules_link = l(t("Rules"), 'rules');
+		$vars = array(
+			'%three' => t("three"), 
+			'!rules' => filter_xss($rules_link)
+		);
 
-	$form['intro'] = array(
-		'#weight' => -999,
-		'#markup' => '<p>' . t("This is the form for online submissions for the 2013 SMASH! AMV Competition. Please make sure you fill in all the necessary details so we know more about you and your AMVs, as these will help us later on with organisation and judging.") . '</p>' . 
-		'<p><strong>' . t("Note:") . ' </strong>' . t("You may submit up to %three entries for this competition, just fill in this form for each time you have an AMV to submit. Please consult the !rules for further details.", $vars) . '</p>',
-	);
+		$form['intro'] = array(
+			'#weight' => -999,
+			'#markup' => '<p>' . t("This is the form for online submissions for the 2013 SMASH! AMV Competition. Please make sure you fill in all the necessary details so we know more about you and your AMVs, as these will help us later on with organisation and judging.") . '</p>' . 
+			'<p><strong>' . t("Note:") . ' </strong>' . t("You may submit up to %three entries for this competition, just fill in this form for each time you have an AMV to submit. Please consult the !rules for further details.", $vars) . '</p>',
+		);
+
+    $form['actions']['submit']['#submit'][] = 'amv_base_thankyou_setup';
+
+    if (isset($_SESSION['source_nid'])) {
+      $source_node = node_load(intval($_SESSION['source_nid']));
+
+      // drupal_set_message('<pre>' . print_r($source_node, 1) . '</pre>');
+      // drupal_set_message('<pre>' . print_r($form, 1) . '</pre>');
+
+      _amv_base_form_amv_node_form_prefill($form, $source_node);
+
+      // unset($_SESSION['source_nid']);
+      // @TODO: comment out later?
+    }
+	}
 
 	$form['title']['#title'] = t('AMV Title');
 	$form['title']['#description'] = t('Please enter the title of your AMV.');
 }
+
+function _amv_base_form_amv_node_form_prefill(&$form, $node) {
+  $fields = array(
+    'field_entrant_names', 
+    'field_entrant_nicknames', 
+    'field_amv_group', 
+    'field_email_address', 
+    'field_country'
+  );
+
+  foreach ($fields as $field) {
+    foreach ($node->{$field} as $langcode => $field_content) {
+      foreach ($field_content as $key => $field_item) {
+
+        if (isset($field_item['value'])) {
+          $form[$field][$langcode][$key]['value']['#default_value'] = $field_item['value'];
+        }
+
+        if (isset($field_item['email'])) {
+          $form[$field][$langcode][$key]['email']['#default_value'] = $field_item['email'];
+        }
+
+        if (isset($field_item['iso2'])) {
+          $form[$field][$langcode]['#default_value'][$key] = $field_item['iso2'];
+        }
+
+      }
+    }
+  }
+}
+
+function amv_base_thankyou_setup($form, &$form_state) {
+  // drupal_set_message('<pre>'.print_r($form_state, 1).'</pre>');
+  $_SESSION['source_nid'] = $form_state['values']['nid'];
+  drupal_goto('thank-you');
+}
+
+function amv_base_menu() {
+	$items['thank-you'] = array(
+    'type' => MENU_CALLBACK,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('amv_base_thankyou_form'),
+		'access callback' => TRUE,
+    'title' => 'Thank you for entering the SMASH! 2013 AMV Competition!'
+	);
+	return $items;
+}
+
+function amv_base_thankyou_form($form, &$form_state) {
+	$form['intro'] = array(
+		'#weight' => -99,
+		'#markup' => '<p>' . t("Would you like to submit another entry to the SMASH! 2013 AMV Competition right now?") . '</p>'
+	);
+
+  $note_0 = "If you say %Yes, we'll load up a new copy of the application form for you, with your details filled in, ready for you to submit a new entry.";
+
+  $note_1 = "If you say %No, but you want to submit another entry later on, you may contact the judges at !amvatsmash with the link to your new email address, and we'll update your info.";
+  $note_1_link = l('amv@smash.org.au', 'mailto:amv@smash.org.au');
+
+  $note_2 = "You may also fill in the !entryform again, up to a total of three entries.";
+  $note_2_link = l(t('Entry Form'), 'node/add/amv');
+
+  $form['note'] = array(
+    '#weight' => -1,
+    '#markup' => '<p>' . t($note_0, array('%Yes' => t('Yes'))) . '</p>' . 
+    '<p>' . t($note_1, array('%No' => t('No'), '!amvatsmash' => filter_xss($note_1_link))) . '</p>' . 
+    '<p>' . t($note_2, array('!entryform' => filter_xss($note_2_link))) . '</p>'
+  );
+
+  $form['buttons'] = array(
+    '#tree' => TRUE,
+    '#weight' => 0,
+  );
+
+	$form['buttons']['yes'] = array(
+		'#type' => 'submit',
+		'#value' => t('Yes'),
+		'#submit' => array('amv_base_thankyou_form_answered_yes'),
+	);
+
+	$form['buttons']['no'] = array(
+		'#type' => 'submit',
+		'#value' => t('No'),
+		'#submit' => array('amv_base_thankyou_form_answered_no'),
+	);  
+
+	return $form;
+}
+
+function amv_base_thankyou_form_answered_yes($form, &$form_state) {
+  drupal_goto('node/add/amv');
+}
+
+function amv_base_thankyou_form_answered_no($form, &$form_state) {
+  unset($_SESSION['source_nid']);
+  drupal_goto('<front>');
+}
+
