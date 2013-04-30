@@ -1,0 +1,6 @@
+name = Views Rules Conditions
+description = Some Rules conditions that do stuff with views
+core = 7.x
+
+dependencies[] = rules
+dependencies[] = views

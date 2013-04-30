@@ -19,6 +19,9 @@ function amv_base_field_default_field_bases() {
       0 => 'node',
     ),
     'field_name' => 'body',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -74,10 +77,13 @@ function amv_base_field_default_field_bases() {
   // Exported field_base: 'field_artist'
   $field_bases['field_artist'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 10,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_artist',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -155,7 +161,7 @@ function amv_base_field_default_field_bases() {
   // Exported field_base: 'field_entrant_names'
   $field_bases['field_entrant_names'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 8,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_entrant_names',
@@ -187,7 +193,7 @@ function amv_base_field_default_field_bases() {
   // Exported field_base: 'field_entrant_nicknames'
   $field_bases['field_entrant_nicknames'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 8,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_entrant_nicknames',
@@ -237,10 +243,13 @@ function amv_base_field_default_field_bases() {
   // Exported field_base: 'field_series'
   $field_bases['field_series'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 10,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_series',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -271,10 +280,13 @@ function amv_base_field_default_field_bases() {
   // Exported field_base: 'field_song'
   $field_bases['field_song'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 10,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_song',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -337,6 +349,9 @@ function amv_base_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_video_source',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,

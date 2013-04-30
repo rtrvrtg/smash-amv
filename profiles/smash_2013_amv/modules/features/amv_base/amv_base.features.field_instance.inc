@@ -15,7 +15,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Describe your video, or make any notes about it.',
+    'description' => 'Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -56,15 +56,15 @@ function amv_base_field_default_field_instances() {
     'label' => 'Description',
     'required' => 1,
     'settings' => array(
-      'display_summary' => 1,
-      'text_processing' => 1,
+      'display_summary' => 0,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
+        'rows' => 5,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
@@ -137,7 +137,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Which artist, band or group performed the song?',
+    'description' => 'List the artists who performed the music sources used in your AMV. Enter their names separated by commas; if their names contain a comma, add them in quotes. eg. "Crosby, Stills & Nash" or "They Shoot Horses, Don\'t They"',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -315,7 +315,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please enter your full name in the following text field. If there are more entrants, please write the names on a different line each. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.',
+    'description' => 'Please enter your full name in the following text field. If there are more entrants, a new line will show for each team member that you want to add, so please enter everyone\'s names. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -373,7 +373,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'If you want to use another name other than your full name for use in representing yourself in the competition, please add that name here. If not, then your full name will be used instead.',
+    'description' => 'If you want to use another name other than your full name for use in representing yourself in the competition, please add that name here. If not, then your full name will be used instead. If you are entering as a team, new lines will appear to let you enter all the nicknames of your team members.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -514,7 +514,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Specify which series the video is sourced from.',
+    'description' => 'List all the anime sources used in your AMV, separated by comma. If you\'re submitting a title with a comma in it, please wrap it in quotes. eg. "Kumo no Mukou, Yakusoku no Basho", "Now & Then, Here & There"',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -552,7 +552,7 @@ function amv_base_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_series',
-    'label' => 'Series',
+    'label' => 'Anime used in AMV',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -574,7 +574,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Which song did you use?',
+    'description' => 'List all the songs/audio sources that were used in your AMV. A new line will appear for each song/audio source used.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -612,7 +612,7 @@ function amv_base_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_song',
-    'label' => 'Song',
+    'label' => 'Music/Audio Source',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -722,7 +722,8 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Please put the link to the uploading site where you have uploaded your AMV. <strong>Note:</strong> No YouTube links will be accepted. <br />
+We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://uploading.com" target="_blank">Uploading.com</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -758,8 +759,8 @@ function amv_base_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_video_source',
-    'label' => 'Video Source',
-    'required' => 0,
+    'label' => 'Link to Video File',
+    'required' => 1,
     'settings' => array(
       'attributes' => array(
         'class' => '',
@@ -773,7 +774,7 @@ function amv_base_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -792,26 +793,28 @@ function amv_base_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('AMV Group');
+  t('Anime used in AMV');
   t('Artist');
   t('Country');
-  t('Describe your video, or make any notes about it.');
   t('Description');
   t('Email Address');
   t('Full name of entrant/s');
   t('If you are part of an AMV Group, please add it in! If your AMV gets shown at the event, the group you are associated with will gain exposure.');
-  t('If you want to use another name other than your full name for use in representing yourself in the competition, please add that name here. If not, then your full name will be used instead.');
+  t('If you want to use another name other than your full name for use in representing yourself in the competition, please add that name here. If not, then your full name will be used instead. If you are entering as a team, new lines will appear to let you enter all the nicknames of your team members.');
   t('It would be great to mention where you come from! This helps us know the demographics of the entrants for this AMV competition!');
-  t('Please enter your full name in the following text field. If there are more entrants, please write the names on a different line each. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.');
+  t('Link to Video File');
+  t('List all the anime sources used in your AMV, separated by comma. If you\'re submitting a title with a comma in it, please wrap it in quotes. eg. "Kumo no Mukou, Yakusoku no Basho", "Now & Then, Here & There"');
+  t('List all the songs/audio sources that were used in your AMV. A new line will appear for each song/audio source used.');
+  t('List the artists who performed the music sources used in your AMV. Enter their names separated by commas; if their names contain a comma, add them in quotes. eg. "Crosby, Stills & Nash" or "They Shoot Horses, Don\'t They"');
+  t('Music/Audio Source');
+  t('Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.');
+  t('Please enter your full name in the following text field. If there are more entrants, a new line will show for each team member that you want to add, so please enter everyone\'s names. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.');
+  t('Please put the link to the uploading site where you have uploaded your AMV. <strong>Note:</strong> No YouTube links will be accepted. <br />
+We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://uploading.com" target="_blank">Uploading.com</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.');
   t('Preferred names or Nicknames');
   t('Rating');
-  t('Series');
-  t('Song');
-  t('Specify which series the video is sourced from.');
   t('Video Display');
-  t('Video Source');
   t('We need your E-mail address to contact you if you win an award in the competition, or any other general enquiries. In the case of group submission, one e-mail address will do.');
-  t('Which artist, band or group performed the song?');
-  t('Which song did you use?');
 
   return $field_instances;
 }
