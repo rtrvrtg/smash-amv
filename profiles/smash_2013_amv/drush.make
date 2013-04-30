@@ -85,6 +85,6 @@ libraries[profiler][download][url] = "http://ftp.drupal.org/files/projects/profi
 libraries[mediaelement][directory_name] = "mediaelement"
 libraries[mediaelement][type] = "library"
 libraries[mediaelement][destination] = "libraries"
-libraries[mediaelement][download][type] = "git"
-libraries[mediaelement][download][url] = "https://github.com/johndyer/mediaelement.git"
+libraries[mediaelement][download][type] = "get"
+libraries[mediaelement][download][url] = "http://github.com/johndyer/mediaelement/zipball/master"
 
