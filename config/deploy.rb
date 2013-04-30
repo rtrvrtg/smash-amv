@@ -88,7 +88,7 @@ namespace :deploy do
   
   desc "Flush the Drupal cache system."
   task :cacheclear, :roles => :web, :on_error => :continue do
-    drush_do("cc all")
+    drush_do("cc all", true)
   end
 end
 

@@ -296,14 +296,23 @@ function smash_2013_amv_install() {
   drupal_get_messages();
 }
 
+/**
+ * Enable a bunch of stuff for the AMV node
+ */
 function smash_2013_amv_update_7002() {
   module_enable(array('link'));
 }
 
+/**
+ * Enable a bunch of stuff for the AMV node
+ */
 function smash_2013_amv_update_7003() {
   module_enable(array('email', 'countries', 'countries_configuration'));
 }
 
-function smash_2013_amv_update_7004() {
-  module_enable(array('rules', 'views_rules_conditions'));
+/**
+ * Setup conditions modules
+ */
+function smash_2013_amv_update_7005() {
+  module_enable(array('rules', 'views_rules_condition'));
 }
