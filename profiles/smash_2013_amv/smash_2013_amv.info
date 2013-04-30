@@ -46,7 +46,6 @@ dependencies[] = link
 dependencies[] = file_entity
 dependencies[] = media
 ; Other
-dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = libraries
