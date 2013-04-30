@@ -464,114 +464,6 @@ function amv_base_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-amv-field_video'.
-  $fields['node-amv-field_video'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_video',
-      'foreign keys' => array(
-        'fid' => array(
-          'columns' => array(
-            'fid' => 'fid',
-          ),
-          'table' => 'file_managed',
-        ),
-      ),
-      'indexes' => array(
-        'fid' => array(
-          0 => 'fid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'file',
-      'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
-        'storage_class' => array(
-          'class_id' => '2',
-          'current_class_id' => '2',
-        ),
-        'uri_scheme' => 's3',
-      ),
-      'translatable' => '0',
-      'type' => 'file',
-    ),
-    'field_instance' => array(
-      'bundle' => 'amv',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'mediaelement',
-          'settings' => array(
-            'controls' => TRUE,
-            'download_link' => FALSE,
-            'download_text' => 'Download',
-            'height' => '385',
-            'width' => '640',
-          ),
-          'type' => 'mediaelement_video',
-          'weight' => '0',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'revision' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'rss' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'hidden',
-          'module' => 'mediaelement',
-          'settings' => array(
-            'controls' => TRUE,
-            'download_link' => FALSE,
-            'download_text' => 'Download',
-            'height' => '385',
-            'width' => '640',
-          ),
-          'type' => 'mediaelement_video',
-          'weight' => '0',
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_video',
-      'label' => 'Video',
-      'required' => 0,
-      'settings' => array(
-        'description_field' => 0,
-        'file_directory' => '',
-        'file_extensions' => 'mp4 m4v ogv',
-        'max_filesize' => '200 MB',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'file',
-        'settings' => array(
-          'progress_indicator' => 'bar',
-        ),
-        'type' => 'file_generic',
-        'weight' => '-3',
-      ),
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Artist');
@@ -579,7 +471,6 @@ function amv_base_field_default_fields() {
   t('Rating');
   t('Series');
   t('Song');
-  t('Video');
 
   return $fields;
 }

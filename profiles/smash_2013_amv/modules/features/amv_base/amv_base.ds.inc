@@ -84,7 +84,7 @@ function amv_base_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_video',
+        0 => 'field_video_display',
       ),
       'right' => array(
         1 => 'post_date',
@@ -96,7 +96,7 @@ function amv_base_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_video' => 'left',
+      'field_video_display' => 'left',
       'post_date' => 'right',
       'field_rating' => 'right',
       'body' => 'right',

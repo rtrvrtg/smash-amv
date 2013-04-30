@@ -81,4 +81,3 @@ features_exclude[field][node-amv-field_artist] = node-amv-field_artist
 features_exclude[field][node-amv-field_rating] = node-amv-field_rating
 features_exclude[field][node-amv-field_series] = node-amv-field_series
 features_exclude[field][node-amv-field_song] = node-amv-field_song
-features_exclude[field][node-amv-field_video] = node-amv-field_video
