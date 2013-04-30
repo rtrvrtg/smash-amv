@@ -303,3 +303,7 @@ function smash_2013_amv_update_7002() {
 function smash_2013_amv_update_7003() {
   module_enable(array('email', 'countries', 'countries_configuration'));
 }
+
+function smash_2013_amv_update_7004() {
+  module_enable(array('rules', 'views_rules_conditions'));
+}
