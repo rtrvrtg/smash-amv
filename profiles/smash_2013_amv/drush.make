@@ -27,7 +27,7 @@ projects[link][subdir] = "contrib"
 projects[media][version] = "1.3"
 projects[media][subdir] = "contrib"
 
-projects[entity][version] = "1.0"
+projects[entity][version] = "1.1"
 projects[entity][subdir] = "contrib"
 
 projects[libraries][version] = "2.1"
