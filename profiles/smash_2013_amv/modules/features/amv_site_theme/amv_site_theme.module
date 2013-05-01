@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Code for the SMASH! joinus Theme feature.
+ */
+
+function amv_site_theme_block_info() {
+  $blocks['copyright_links'] = array(
+    'info' => t('Copyright and links'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    'region' => 'footer',
+  );
+
+  return $blocks;
+}
+
+function amv_site_theme_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'copyright_links':
+      
+      $content = '<p>&copy; 2013 SMASH Inc</p><ul><li><a href="http://www.smash.org.au/contact-us">Contact Us</a></li><li><a href="http://www.smash.org.au/privacy-policy">Privacy</a></li></ul>';
+      
+      $block['subject'] = NULL;
+      $block['content'] = check_markup(
+        $content,
+        'html'
+      );
+      break;
+  }
+  
+  return $block;
+}
