@@ -31,14 +31,18 @@ function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 
     if (isset($_SESSION['source_nid'])) {
       $source_node = node_load(intval($_SESSION['source_nid']));
-
-      // drupal_set_message('<pre>' . print_r($source_node, 1) . '</pre>');
-      // drupal_set_message('<pre>' . print_r($form, 1) . '</pre>');
-
       _amv_base_form_amv_node_form_prefill($form, $source_node);
+    }
 
-      // unset($_SESSION['source_nid']);
-      // @TODO: comment out later?
+    $allow_more = amv_base_thankyou_form_allow_more();
+    if (!$allow_more) {
+      $amvtrans = array(
+        '%three' => t('three'),
+        '!amv' => filter_xss(l('amv@smash.org.au', 'mailto:amv@smash.org.au')),
+      );
+      drupal_set_message(t("You have already submitted %three AMVs, and can not submit any more. If you feel this is in error, please contact !amv immediately.", $amvtrans), 'error');
+      $form['actions']['submit']['#disabled'] = TRUE;
+      $form['actions']['preview']['#disabled'] = TRUE;
     }
 	}
 
@@ -99,7 +103,22 @@ function amv_base_menu() {
 		'access callback' => TRUE,
     'title' => 'Thank you for entering the SMASH! 2013 AMV Competition!'
 	);
+  $items['change-email'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'amv_base_change_email',
+    'access callback' => TRUE,
+    'title' => 'Change Email'
+  );
 	return $items;
+}
+
+/**
+ * Page to change email
+ */
+function amv_base_change_email() {
+  unset($_SESSION['source_nid']);
+  drupal_set_message(t("Your email address has been cleared."));
+  drupal_goto('<front>');
 }
 
 /**
