@@ -158,7 +158,7 @@ function amv_base_thankyou_form($form, &$form_state) {
     );
     $form['intro'] = array(
       '#weight' => -99,
-      '#markup' => '<p>' . t("You have already submitted %three AMVs, and can not submit any more. If you feel this is in error, please contact !amv immediately.") . '</p>'
+      '#markup' => '<p>' . t("You have already submitted %three AMVs, and can not submit any more. If you feel this is in error, please contact !amv immediately.", $amvtrans) . '</p>'
     );
 
     $form['buttons']['no'] = array(
