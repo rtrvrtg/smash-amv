@@ -6,6 +6,9 @@
 
 include_once 'amv_base.features.inc';
 
+/**
+ * Alter the Add AMV form
+ */
 function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 	// drupal_set_message('<pre>' . print_r($form, 1) . '</pre>');
 
@@ -43,6 +46,9 @@ function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 	$form['title']['#description'] = t('Please enter the title of your AMV.');
 }
 
+/**
+ * Prefill the AMV form with details of a previously submitted AMV
+ */
 function _amv_base_form_amv_node_form_prefill(&$form, $node) {
   $fields = array(
     'field_entrant_names', 
@@ -73,12 +79,18 @@ function _amv_base_form_amv_node_form_prefill(&$form, $node) {
   }
 }
 
+/**
+ * Setup redirection to Thank You form
+ */
 function amv_base_thankyou_setup($form, &$form_state) {
   // drupal_set_message('<pre>'.print_r($form_state, 1).'</pre>');
   $_SESSION['source_nid'] = $form_state['values']['nid'];
   drupal_goto('thank-you');
 }
 
+/**
+ * Set up Thank You page
+ */
 function amv_base_menu() {
 	$items['thank-you'] = array(
     'type' => MENU_CALLBACK,
@@ -90,51 +102,110 @@ function amv_base_menu() {
 	return $items;
 }
 
+/**
+ * Thank You form
+ */
 function amv_base_thankyou_form($form, &$form_state) {
-	$form['intro'] = array(
-		'#weight' => -99,
-		'#markup' => '<p>' . t("Would you like to submit another entry to the SMASH! 2013 AMV Competition right now?") . '</p>'
-	);
+	
 
-  $note_0 = "If you say %Yes, we'll load up a new copy of the application form for you, with your details filled in, ready for you to submit a new entry.";
+  /**
+   * Checks if user has submitted three times
+   */
+  $allow_more = amv_base_thankyou_form_allow_more();
 
-  $note_1 = "If you say %No, but you want to submit another entry later on, you may contact the judges at !amvatsmash with the link to your new email address, and we'll update your info.";
-  $note_1_link = l('amv@smash.org.au', 'mailto:amv@smash.org.au');
+  if ($allow_more) {
+    $form['intro'] = array(
+      '#weight' => -99,
+      '#markup' => '<p>' . t("Would you like to submit another entry to the SMASH! 2013 AMV Competition right now?") . '</p>'
+    );
 
-  $note_2 = "You may also fill in the !entryform again, up to a total of three entries.";
-  $note_2_link = l(t('Entry Form'), 'node/add/amv');
+    $note_0 = "If you say %Yes, we'll load up a new copy of the application form for you, with your details filled in, ready for you to submit a new entry.";
 
-  $form['note'] = array(
-    '#weight' => -1,
-    '#markup' => '<p>' . t($note_0, array('%Yes' => t('Yes'))) . '</p>' . 
-    '<p>' . t($note_1, array('%No' => t('No'), '!amvatsmash' => filter_xss($note_1_link))) . '</p>' . 
-    '<p>' . t($note_2, array('!entryform' => filter_xss($note_2_link))) . '</p>'
-  );
+    $note_1 = "If you say %No, but you want to submit another entry later on, you may contact the judges at !amvatsmash with the link to your new email address, and we'll update your info.";
+    $note_1_link = l('amv@smash.org.au', 'mailto:amv@smash.org.au');
 
-  $form['buttons'] = array(
-    '#tree' => TRUE,
-    '#weight' => 0,
-  );
+    $note_2 = "You may also fill in the !entryform again, up to a total of three entries.";
+    $note_2_link = l(t('Entry Form'), 'node/add/amv');
 
-	$form['buttons']['yes'] = array(
-		'#type' => 'submit',
-		'#value' => t('Yes'),
-		'#submit' => array('amv_base_thankyou_form_answered_yes'),
-	);
+    $form['note'] = array(
+      '#weight' => -1,
+      '#markup' => '<p>' . t($note_0, array('%Yes' => t('Yes'))) . '</p>' . 
+      '<p>' . t($note_1, array('%No' => t('No'), '!amvatsmash' => filter_xss($note_1_link))) . '</p>' . 
+      '<p>' . t($note_2, array('!entryform' => filter_xss($note_2_link))) . '</p>'
+    );
 
-	$form['buttons']['no'] = array(
-		'#type' => 'submit',
-		'#value' => t('No'),
-		'#submit' => array('amv_base_thankyou_form_answered_no'),
-	);  
+    $form['buttons'] = array(
+      '#tree' => TRUE,
+      '#weight' => 0,
+    );
+
+    $form['buttons']['yes'] = array(
+      '#type' => 'submit',
+      '#value' => t('Yes'),
+      '#submit' => array('amv_base_thankyou_form_answered_yes'),
+    );
+
+    $form['buttons']['no'] = array(
+      '#type' => 'submit',
+      '#value' => t('No'),
+      '#submit' => array('amv_base_thankyou_form_answered_no'),
+    );
+  }
+  else {
+    $amvtrans = array(
+      '%three' => t('three'),
+      '!amv' => filter_xss(l('amv@smash.org.au', 'mailto:amv@smash.org.au')),
+    );
+    $form['intro'] = array(
+      '#weight' => -99,
+      '#markup' => '<p>' . t("You have already submitted %three AMVs, and can not submit any more. If you feel this is in error, please contact !amv immediately.") . '</p>'
+    );
+
+    $form['buttons']['no'] = array(
+      '#type' => 'submit',
+      '#value' => t('Return to AMV list'),
+      '#submit' => array('amv_base_thankyou_form_answered_no'),
+    );
+  }
+
 
 	return $form;
 }
 
+/**
+ * Callback to determine if normal buttons are OK.
+ */
+function amv_base_thankyou_form_allow_more() {
+  $source_nid = $_SESSION['source_nid'];
+  if (empty($source_nid)) return TRUE;
+
+  $count = 0;
+
+  $node = node_load($source_nid);
+  $email = $node->field_email_address[LANGUAGE_NONE][0]['email'];
+
+  $view = views_get_view('submissions_by_email');
+  if (is_object($view)) {
+    $view->set_arguments(array($email));
+    $view->set_display('default');
+    $view->pre_execute();
+    $view->execute();
+    $count = count($view->result);
+  }
+
+  return $count < 3;
+}
+
+/**
+ * Thank You form submit action: Yes
+ */
 function amv_base_thankyou_form_answered_yes($form, &$form_state) {
   drupal_goto('node/add/amv');
 }
 
+/**
+ * Thank You form submit action: No
+ */
 function amv_base_thankyou_form_answered_no($form, &$form_state) {
   unset($_SESSION['source_nid']);
   drupal_goto('<front>');
