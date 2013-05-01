@@ -29,6 +29,10 @@ function amv_base_form_amv_node_form_alter(&$form, &$form_state, $form_id) {
 
     $form['actions']['submit']['#submit'][] = 'amv_base_thankyou_setup';
 
+    if (!isset($_SESSION)) {
+      drupal_session_start();
+    }
+
     if (isset($_SESSION['source_nid'])) {
       $source_node = node_load(intval($_SESSION['source_nid']));
       _amv_base_form_amv_node_form_prefill($form, $source_node);
@@ -87,7 +91,9 @@ function _amv_base_form_amv_node_form_prefill(&$form, $node) {
  * Setup redirection to Thank You form
  */
 function amv_base_thankyou_setup($form, &$form_state) {
-  // drupal_set_message('<pre>'.print_r($form_state, 1).'</pre>');
+  if (!isset($_SESSION)) {
+    drupal_session_start();
+  }
   $_SESSION['source_nid'] = $form_state['values']['nid'];
   drupal_goto('thank-you');
 }
@@ -116,7 +122,9 @@ function amv_base_menu() {
  * Page to change email
  */
 function amv_base_change_email() {
-  unset($_SESSION['source_nid']);
+  if (isset($_SESSION) && isset($_SESSION['source_nid'])) {
+    unset($_SESSION['source_nid']);
+  }
   drupal_set_message(t("Your email address has been cleared."));
   drupal_goto('<front>');
 }
@@ -195,8 +203,14 @@ function amv_base_thankyou_form($form, &$form_state) {
  * Callback to determine if normal buttons are OK.
  */
 function amv_base_thankyou_form_allow_more() {
-  $source_nid = $_SESSION['source_nid'];
-  if (empty($source_nid)) return TRUE;
+  $source_nid = 0;
+  if (!isset($_SESSION)) {
+    drupal_session_start();
+  }
+  if (isset($_SESSION['source_nid'])) {
+    $source_nid = $_SESSION['source_nid'];
+  }
+  if ($source_nid == 0 || empty($source_nid)) return TRUE;
 
   $count = 0;
 
@@ -226,7 +240,9 @@ function amv_base_thankyou_form_answered_yes($form, &$form_state) {
  * Thank You form submit action: No
  */
 function amv_base_thankyou_form_answered_no($form, &$form_state) {
-  unset($_SESSION['source_nid']);
+  if (isset($_SESSION) && isset($_SESSION['source_nid'])) {
+    unset($_SESSION['source_nid']);
+  }
   drupal_goto('<front>');
 }
 
