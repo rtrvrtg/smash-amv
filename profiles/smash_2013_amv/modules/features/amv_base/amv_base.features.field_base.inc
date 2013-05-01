@@ -74,6 +74,38 @@ function amv_base_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_category'
+  $field_bases['field_category'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_category',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'action' => 'Action',
+        'comedy' => 'Comedy/Parody',
+        'drama' => 'Drama/Romance',
+        'dance' => 'Upbeat/Dance',
+        'unsure' => 'Unsure',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_country'
   $field_bases['field_country'] = array(
     'active' => 1,

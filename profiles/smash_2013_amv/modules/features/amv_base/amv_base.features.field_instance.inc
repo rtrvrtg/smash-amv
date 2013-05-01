@@ -131,6 +131,61 @@ function amv_base_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-amv-field_category'
+  $field_instances['node-amv-field_category'] = array(
+    'bundle' => 'amv',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please choose the category which you think seems suitable for your AMV. If unsure, select "Unsure" as your answer, and the AMV Co-ordinator will determine the category for you.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'revision' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_category',
+    'label' => 'Category',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-amv-field_country'
   $field_instances['node-amv-field_country'] = array(
     'bundle' => 'amv',
@@ -476,7 +531,7 @@ function amv_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -536,7 +591,7 @@ function amv_base_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -624,7 +679,7 @@ function amv_base_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -696,7 +751,7 @@ We recommend that you post it on one of the following services: <a href="http://
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -704,6 +759,7 @@ We recommend that you post it on one of the following services: <a href="http://
   // Included for use with string extractors like potx.
   t('AMV Group');
   t('Anime used in AMV');
+  t('Category');
   t('Country');
   t('Description');
   t('Email Address');
@@ -716,6 +772,7 @@ We recommend that you post it on one of the following services: <a href="http://
   t('List all the songs/audio sources that were used in your AMV, and the artist responsible for performing each one. A new line will appear for each song/audio source used.');
   t('Music/Audio Source');
   t('Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.');
+  t('Please choose the category which you think seems suitable for your AMV. If unsure, select "Unsure" as your answer, and the AMV Co-ordinator will determine the category for you.');
   t('Please enter your full name in the following text field. If there are more entrants, a new line will show for each team member that you want to add, so please enter everyone\'s names. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.');
   t('Please put the link to the uploading site where you have uploaded your AMV. <strong>Note:</strong> No YouTube links will be accepted. <br />
 We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://uploading.com" target="_blank">Uploading.com</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.');
