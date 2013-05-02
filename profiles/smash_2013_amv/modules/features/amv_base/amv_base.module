@@ -109,6 +109,12 @@ function amv_base_menu() {
 		'access callback' => TRUE,
     'title' => 'Thank you for entering the SMASH! 2013 AMV Competition!'
 	);
+  $items['good-luck'] = array(
+    'type' => MENU_CALLBACK,
+    'page callback' => 'amv_base_goodluck_page',
+    'access callback' => TRUE,
+    'title' => 'Thank you and good luck!'
+  );
   $items['change-email'] = array(
     'type' => MENU_CALLBACK,
     'page callback' => 'amv_base_change_email',
@@ -243,6 +249,14 @@ function amv_base_thankyou_form_answered_no($form, &$form_state) {
   if (isset($_SESSION) && isset($_SESSION['source_nid'])) {
     unset($_SESSION['source_nid']);
   }
-  drupal_goto('<front>');
+  drupal_goto('good-luck');
+}
+
+function amv_base_goodluck_page() {
+  drupal_add_js('jQuery(document).ready(function () {  setTimeout(function(){ window.location.href="http://www.smash.org.au/"; }, 10000);  });', 'inline');
+  $trans = array(
+    '!mainsite' => filter_xss(l(t("main SMASH! website"), "http://www.smash.org.au/"))
+  );
+  return '<p>' . t("You will be sent to the !mainsite shortly.", $trans) . '</p>';
 }
 
