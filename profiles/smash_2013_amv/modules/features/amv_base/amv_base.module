@@ -196,7 +196,7 @@ function amv_base_thankyou_form($form, &$form_state) {
 
     $form['buttons']['no'] = array(
       '#type' => 'submit',
-      '#value' => t('Return to AMV list'),
+      '#value' => t('Return to main SMASH! website'),
       '#submit' => array('amv_base_thankyou_form_answered_no'),
     );
   }
