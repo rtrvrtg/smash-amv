@@ -20,7 +20,7 @@ function amv_site_theme_block_view($delta = '') {
   switch ($delta) {
     case 'copyright_links':
       
-      $content = '<p>&copy; 2013 SMASH Inc</p><ul><li><a href="http://www.smash.org.au/contact-us">Contact Us</a></li><li><a href="http://www.smash.org.au/privacy-policy">Privacy</a></li></ul>';
+      $content = '<p>&copy; ' . date('Y') . ' SMASH Inc</p><ul><li><a href="http://www.smash.org.au/contactus">Contact Us</a></li><li><a href="http://www.smash.org.au/privacy-policy">Privacy</a></li></ul>';
       
       $block['subject'] = NULL;
       $block['content'] = check_markup(

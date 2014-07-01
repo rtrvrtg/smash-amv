@@ -58,6 +58,7 @@ function mediaelement_sourced_link_field_formatter_view($entity_type, $entity, $
         'poster' => file_create_url($src) . '.jpg',
         'type' => $type,
         'class' => $class,
+        'preload' => 'none',
       ),
       '#settings' => $settings,
       '#attached' => array(
