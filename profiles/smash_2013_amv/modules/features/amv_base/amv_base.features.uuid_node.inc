@@ -26,7 +26,7 @@ function amv_base_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '1723fa15-f773-450d-85f0-c9414f574087',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
