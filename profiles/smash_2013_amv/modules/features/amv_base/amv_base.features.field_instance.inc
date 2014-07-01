@@ -15,7 +15,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.',
+    'description' => 'Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging. <strong>(Do not list anime sources here.)</strong>',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -29,7 +29,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'revision' => array(
         'label' => 'above',
@@ -48,7 +48,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -90,7 +90,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'revision' => array(
         'label' => 'above',
@@ -109,7 +109,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -149,7 +149,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'revision' => array(
         'label' => 'above',
@@ -165,9 +165,10 @@ function amv_base_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'list_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -208,7 +209,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'countries',
         'settings' => array(),
         'type' => 'country_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'revision' => array(
         'label' => 'above',
@@ -227,7 +228,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'countries',
         'settings' => array(),
         'type' => 'country_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'node',
@@ -377,7 +378,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'revision' => array(
         'label' => 'above',
@@ -396,7 +397,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -435,7 +436,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 9,
       ),
       'revision' => array(
         'label' => 'above',
@@ -453,7 +454,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -462,6 +463,8 @@ function amv_base_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'allow_clear' => 0,
+      'allow_ownvote' => TRUE,
+      'allow_revote' => TRUE,
       'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
@@ -494,7 +497,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'revision' => array(
         'label' => 'above',
@@ -513,7 +516,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 7,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -554,7 +557,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'revision' => array(
         'label' => 'above',
@@ -573,7 +576,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -600,7 +603,7 @@ function amv_base_field_default_field_instances() {
     'bundle' => 'amv',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'THIS FIELD IS ADMIN ONLY! Once you\'ve uploaded an AMV to our data store using the <a href="https://github.com/rtrvrtg/amv-uploader">upload tool</a>, you can paste the URL you received into this field, save this AMV, and it will automagically appear on the site.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -689,7 +692,7 @@ function amv_base_field_default_field_instances() {
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Please put the link to the uploading site where you have uploaded your AMV. <strong>Note:</strong> No YouTube links will be accepted. <br />
-We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://uploading.com" target="_blank">Uploading.com</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.',
+We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://wetransfercom" target="_blank">Wetransfer</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -771,13 +774,14 @@ We recommend that you post it on one of the following services: <a href="http://
   t('List all the anime sources used in your AMV, separated by comma. If you\'re submitting a title with a comma in it, please wrap it in quotes. eg. "Kumo no Mukou, Yakusoku no Basho", "Now & Then, Here & There"');
   t('List all the songs/audio sources that were used in your AMV, and the artist responsible for performing each one. A new line will appear for each song/audio source used.');
   t('Music/Audio Source');
-  t('Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging.');
+  t('Please add a short description about your AMV. This will help us know and understand your AMV more and can assist us in our judging. <strong>(Do not list anime sources here.)</strong>');
   t('Please choose the category which you think seems suitable for your AMV. If unsure, select "Unsure" as your answer, and the AMV Co-ordinator will determine the category for you.');
   t('Please enter your full name in the following text field. If there are more entrants, a new line will show for each team member that you want to add, so please enter everyone\'s names. Please note that if your AMV(s) entered wins a category and/or award, and it is a group submission, we will use the first name shown and send it to that person.');
   t('Please put the link to the uploading site where you have uploaded your AMV. <strong>Note:</strong> No YouTube links will be accepted. <br />
-We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://uploading.com" target="_blank">Uploading.com</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.');
+We recommend that you post it on one of the following services: <a href="http://mediafire.com" target="_blank">MediaFire</a>, <a href="http://sendspace.com" target="_blank">SendSpace</a>, <a href="http://wetransfercom" target="_blank">Wetransfer</a>. Please ensure that your video file follows the <a href="/rules" target="_blank">AMV Encoding Guidelines</a>.');
   t('Preferred names or Nicknames');
   t('Rating');
+  t('THIS FIELD IS ADMIN ONLY! Once you\'ve uploaded an AMV to our data store using the <a href="https://github.com/rtrvrtg/amv-uploader">upload tool</a>, you can paste the URL you received into this field, save this AMV, and it will automagically appear on the site.');
   t('Video Display');
   t('We need your E-mail address to contact you if you win an award in the competition, or any other general enquiries. In the case of group submission, one e-mail address will do.');
 

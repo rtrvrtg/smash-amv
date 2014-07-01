@@ -10,7 +10,7 @@
 function amv_base_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: access content.
+  // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
     'roles' => array(
@@ -21,7 +21,7 @@ function amv_base_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: create amv content.
+  // Exported permission: 'create amv content'.
   $permissions['create amv content'] = array(
     'name' => 'create amv content',
     'roles' => array(
@@ -31,7 +31,7 @@ function amv_base_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any amv content.
+  // Exported permission: 'delete any amv content'.
   $permissions['delete any amv content'] = array(
     'name' => 'delete any amv content',
     'roles' => array(
@@ -40,7 +40,7 @@ function amv_base_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own amv content.
+  // Exported permission: 'delete own amv content'.
   $permissions['delete own amv content'] = array(
     'name' => 'delete own amv content',
     'roles' => array(
@@ -49,7 +49,7 @@ function amv_base_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit any amv content.
+  // Exported permission: 'edit any amv content'.
   $permissions['edit any amv content'] = array(
     'name' => 'edit any amv content',
     'roles' => array(
@@ -58,7 +58,7 @@ function amv_base_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own amv content.
+  // Exported permission: 'edit own amv content'.
   $permissions['edit own amv content'] = array(
     'name' => 'edit own amv content',
     'roles' => array(

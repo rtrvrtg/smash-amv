@@ -40,7 +40,7 @@ function amv_base_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_post_date_video_format',
+      'format' => 'ds_post_date_long',
     ),
   );
   $export['node|amv|full'] = $ds_fieldsetting;
@@ -53,14 +53,9 @@ function amv_base_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_post_date_video_format',
+      'format' => 'default',
     ),
   );
   $export['node|amv|teaser'] = $ds_fieldsetting;
@@ -130,11 +125,10 @@ function amv_base_ds_layout_settings_info() {
         2 => 'post_date',
         3 => 'body',
         4 => 'field_song',
-        5 => 'field_artist',
-        6 => 'field_series',
-        7 => 'field_entrant_nicknames',
-        8 => 'field_amv_group',
-        9 => 'field_country',
+        5 => 'field_series',
+        6 => 'field_entrant_nicknames',
+        7 => 'field_amv_group',
+        8 => 'field_country',
       ),
     ),
     'fields' => array(
@@ -143,7 +137,6 @@ function amv_base_ds_layout_settings_info() {
       'post_date' => 'right',
       'body' => 'right',
       'field_song' => 'right',
-      'field_artist' => 'right',
       'field_series' => 'right',
       'field_entrant_nicknames' => 'right',
       'field_amv_group' => 'right',
@@ -173,24 +166,22 @@ function amv_base_ds_layout_settings_info() {
         0 => 'field_video_display',
       ),
       'right' => array(
-        1 => 'title',
-        2 => 'post_date',
+        1 => 'field_category',
+        2 => 'title',
         3 => 'body',
         4 => 'field_song',
-        5 => 'field_artist',
-        6 => 'field_series',
-        7 => 'field_entrant_nicknames',
-        8 => 'field_amv_group',
-        9 => 'field_country',
+        5 => 'field_series',
+        6 => 'field_entrant_nicknames',
+        7 => 'field_amv_group',
+        8 => 'field_country',
       ),
     ),
     'fields' => array(
       'field_video_display' => 'left',
+      'field_category' => 'right',
       'title' => 'right',
-      'post_date' => 'right',
       'body' => 'right',
       'field_song' => 'right',
-      'field_artist' => 'right',
       'field_series' => 'right',
       'field_entrant_nicknames' => 'right',
       'field_amv_group' => 'right',
