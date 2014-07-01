@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Disable fivestar cos we're not using it for voting anymore.
+ */
+function amv_base_update_7001() {
+	module_disable(array('fivestar'));
+}

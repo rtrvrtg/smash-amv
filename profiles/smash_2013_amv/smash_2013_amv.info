@@ -1,5 +1,5 @@
 ; Packaging information for smash_2013_amv
-name = "SMASH! 2013 AMV"
+name = "SMASH! 2014 AMV"
 description = "Submit your AMVs and win!"
 exclusive = "1"
 core = "7.x"
@@ -40,7 +40,9 @@ dependencies[] = ds
 dependencies[] = ds_extras
 dependencies[] = ds_ui
 ; Fields
+dependencies[] = countries
 dependencies[] = email
+dependencies[] = field_permissions
 dependencies[] = link
 ; Media
 dependencies[] = file_entity
@@ -55,6 +57,8 @@ dependencies[] = strongarm
 ; Rules
 dependencies[] = rules
 dependencies[] = rules_admin
+; SMASH!
+dependencies[] = amv_site_theme
 ; UUID
 dependencies[] = uuid
 ; User interface
@@ -62,9 +66,9 @@ dependencies[] = jquery_update
 ; Views
 dependencies[] = views
 dependencies[] = views_ui
-; Voting
-dependencies[] = fivestar
-dependencies[] = votingapi
+; Webform
+dependencies[] = webform
+dependencies[] = webform_views_select
 ; Features
 dependencies[] = features
 dependencies[] = amv_base

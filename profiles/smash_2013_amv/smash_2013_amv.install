@@ -323,3 +323,10 @@ function smash_2013_amv_update_7005() {
 function smash_2013_amv_update_7006() {
   module_enable(array('amv_site_theme'));
 }
+
+/**
+ * AMV Site footer
+ */
+function smash_2013_amv_update_7007() {
+  module_disable(array('votingapi', 'fivestar'));
+}
