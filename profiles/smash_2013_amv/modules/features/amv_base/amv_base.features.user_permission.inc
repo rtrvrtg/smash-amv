@@ -25,7 +25,6 @@ function amv_base_user_default_permissions() {
   $permissions['create amv content'] = array(
     'name' => 'create amv content',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',

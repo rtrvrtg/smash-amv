@@ -26,16 +26,16 @@ function amv_base_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '1723fa15-f773-450d-85f0-c9414f574087',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
     'und' => array(
       0 => array(
         'value' => '<p>You\'ve seen the AMVs, now\'s your chance to have your say about which ones are the best.</p>
-<p>Enter your email address and your top three choices below. We\'ll count all the votes up and announce the winner at <em>SMASH! 2014</em>.</p>',
+<p>Pick your top three choices using the form below. We\'ll count all the votes up and announce the winner at <em>SMASH! 2014</em>.</p>',
         'summary' => '',
         'format' => 'html',
         'safe_value' => ' <p>You\'ve seen the AMVs, now\'s your chance to have your say about which ones are the best.</p>
-<p>Enter your email address and your top three choices below. We\'ll count all the votes up and announce the winner at <em>SMASH! 2014</em>.</p> ',
+<p>Pick your top three choices using the form below. We\'ll count all the votes up and announce the winner at <em>SMASH! 2014</em>.</p> ',
         'safe_summary' => '  ',
       ),
     ),
@@ -107,7 +107,7 @@ function amv_base_uuid_features_default_content() {
     'auto_save' => 0,
     'submit_notice' => 1,
     'submit_text' => '',
-    'submit_limit' => -1,
+    'submit_limit' => 1,
     'submit_interval' => -1,
     'total_submit_limit' => -1,
     'total_submit_interval' => -1,
@@ -131,30 +131,6 @@ function amv_base_uuid_features_default_content() {
       ),
     ),
     'components' => array(
-      1 => array(
-        'nid' => 260,
-        'cid' => 1,
-        'pid' => 0,
-        'form_key' => 'your_email_address',
-        'name' => 'Your email address',
-        'type' => 'email',
-        'value' => '',
-        'extra' => array(
-          'description' => 'We\'d like to make sure that all votes are fair and unique, so we require your email address. We won\'t use it for any purpose other than tabulating votes in the People\'s Choice AMV competition.',
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 1,
-          'conditional_operator' => '=',
-          'width' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => 1,
-        'weight' => 0,
-        'page_num' => 1,
-      ),
       2 => array(
         'nid' => 260,
         'cid' => 2,
