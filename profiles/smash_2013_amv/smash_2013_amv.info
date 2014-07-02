@@ -66,6 +66,9 @@ dependencies[] = jquery_update
 ; Views
 dependencies[] = views
 dependencies[] = views_ui
+; Voting
+dependencies[] = fivestar
+dependencies[] = votingapi
 ; Webform
 dependencies[] = webform
 dependencies[] = webform_views_select
