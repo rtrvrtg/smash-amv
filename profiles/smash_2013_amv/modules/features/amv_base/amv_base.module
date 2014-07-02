@@ -262,9 +262,9 @@ function amv_base_goodluck_page() {
 
 /* Fuck you fivestar */
 
-function fivestar_property_info_callback(&$info, $entity_type, $field, $instance, $field_type){
+// function fivestar_property_info_callback(&$info, $entity_type, $field, $instance, $field_type){
 
-}
+// }
 
 
 
