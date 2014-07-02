@@ -60,7 +60,7 @@ projects[jquery_update][subdir] = "contrib"
 projects[views][version] = "3.8"
 projects[views][subdir] = "contrib"
 
-projects[fivestar][version] = "2.0-alpha2"
+projects[fivestar][version] = "2.1"
 projects[fivestar][subdir] = "contrib"
 
 projects[votingapi][version] = "2.11"
