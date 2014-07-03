@@ -20,6 +20,7 @@ projects[features][subdir] = "contrib"
 
 projects[uuid_features][version] = "1.0-alpha4"
 projects[uuid_features][subdir] = "contrib"
+projects[uuid_features][patch][] = "https://www.drupal.org/files/issues/2117453-uuid_features-use-entity_uuid_save-4.patch"
 
 projects[countries][version] = "2.1"
 projects[countries][subdir] = "contrib"
@@ -68,6 +69,7 @@ projects[votingapi][subdir] = "contrib"
 
 projects[webform][version] = "3.20"
 projects[webform][subdir] = "contrib"
+projects[webform][patch][] = "https://www.drupal.org/files/issues/webform_uuid-2076483-4.patch"
 
 ; +++++ Themes +++++
 

@@ -96,7 +96,7 @@ function amv_base_uuid_features_default_content() {
     ),
   ),
   'webform' => array(
-    'nid' => 260,
+    'nid' => '1723fa15-f773-450d-85f0-c9414f574087',
     'confirmation' => 'Thanks for submitting your choices. We\'ll announce the winner at <em>SMASH! 2014</em>!',
     'confirmation_format' => 'html',
     'redirect_url' => '<confirmation>',
@@ -132,7 +132,7 @@ function amv_base_uuid_features_default_content() {
     ),
     'components' => array(
       2 => array(
-        'nid' => 260,
+        'nid' => '1723fa15-f773-450d-85f0-c9414f574087',
         'cid' => 2,
         'pid' => 0,
         'form_key' => '1_choice',
@@ -170,7 +170,7 @@ function amv_base_uuid_features_default_content() {
         'page_num' => 1,
       ),
       3 => array(
-        'nid' => 260,
+        'nid' => '1723fa15-f773-450d-85f0-c9414f574087',
         'cid' => 3,
         'pid' => 0,
         'form_key' => '2_choice',
@@ -208,7 +208,7 @@ function amv_base_uuid_features_default_content() {
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 260,
+        'nid' => '1723fa15-f773-450d-85f0-c9414f574087',
         'cid' => 4,
         'pid' => 0,
         'form_key' => '3_choice',
