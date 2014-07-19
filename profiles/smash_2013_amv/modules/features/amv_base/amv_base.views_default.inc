@@ -114,7 +114,7 @@ function amv_base_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'No AMVs have been submitted and reviewed yet. Get editing and send them in!';
+  $handler->display->display_options['empty']['area']['content'] = 'No AMVs found for this search query.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';

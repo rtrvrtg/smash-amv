@@ -193,7 +193,7 @@ function amv_base_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_entrant_nicknames',
     'field_permissions' => array(
-      'type' => 1,
+      'type' => 0,
     ),
     'foreign keys' => array(
       'format' => array(
