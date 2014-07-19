@@ -78,24 +78,28 @@ function amv_base_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'right' => array(
-        0 => 'post_date',
-        1 => 'body',
-        2 => 'field_song',
-        3 => 'field_artist',
-        4 => 'field_series',
-      ),
       'left' => array(
-        5 => 'field_video_display',
+        0 => 'field_video_display',
+      ),
+      'right' => array(
+        1 => 'post_date',
+        2 => 'body',
+        3 => 'field_song',
+        4 => 'field_series',
+        5 => 'field_entrant_nicknames',
+        6 => 'field_amv_group',
+        7 => 'field_country',
       ),
     ),
     'fields' => array(
+      'field_video_display' => 'left',
       'post_date' => 'right',
       'body' => 'right',
       'field_song' => 'right',
-      'field_artist' => 'right',
       'field_series' => 'right',
-      'field_video_display' => 'left',
+      'field_entrant_nicknames' => 'right',
+      'field_amv_group' => 'right',
+      'field_country' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -105,6 +109,8 @@ function amv_base_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['node|amv|default'] = $ds_layout;
 

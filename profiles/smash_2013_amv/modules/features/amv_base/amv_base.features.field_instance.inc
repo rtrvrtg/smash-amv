@@ -22,7 +22,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -80,10 +80,11 @@ function amv_base_field_default_field_instances() {
     'description' => 'If you are part of an AMV Group, please add it in! If your AMV gets shown at the event, the group you are associated with will gain exposure.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
+        'type' => 'text_default',
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -140,10 +141,9 @@ function amv_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 14,
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'full' => array(
         'label' => 'above',
@@ -199,10 +199,11 @@ function amv_base_field_default_field_instances() {
     'description' => 'It would be great to mention where you come from! This helps us know the demographics of the entrants for this AMV competition!',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'countries',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'type' => 'country_default',
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -258,7 +259,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'above',
@@ -314,7 +315,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 17,
       ),
       'full' => array(
         'label' => 'above',
@@ -368,10 +369,11 @@ function amv_base_field_default_field_instances() {
     'description' => 'If you want to use another name other than your full name for use in representing yourself in the competition, please add that name here. If not, then your full name will be used instead. If you are entering as a team, new lines will appear to let you enter all the nicknames of your team members.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -430,7 +432,7 @@ function amv_base_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 15,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -490,7 +492,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -550,7 +552,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -610,7 +612,7 @@ function amv_base_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -698,7 +700,7 @@ We recommend that you post it on one of the following services: <a href="http://
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 16,
       ),
       'full' => array(
         'label' => 'above',
