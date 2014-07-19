@@ -330,3 +330,10 @@ function smash_2013_amv_update_7006() {
 function smash_2013_amv_update_7007() {
   module_disable(array('votingapi', 'fivestar'));
 }
+
+/**
+ * Enable BAM.
+ */
+function smash_2013_amv_update_7008() {
+  module_enable(array('backup_migrate'));
+}

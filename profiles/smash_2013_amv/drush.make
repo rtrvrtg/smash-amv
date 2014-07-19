@@ -71,6 +71,9 @@ projects[webform][version] = "3.20"
 projects[webform][subdir] = "contrib"
 ;projects[webform][patch][] = "https://www.drupal.org/files/issues/webform_uuid-2076483-4.patch"
 
+projects[backup_migrate][version] = "3.0"
+projects[backup_migrate][subdir] = "contrib"
+
 ; +++++ Themes +++++
 
 ; zen
