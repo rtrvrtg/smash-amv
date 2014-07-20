@@ -73,7 +73,6 @@ features[user_permission][] = delete any amv content
 features[user_permission][] = delete own amv content
 features[user_permission][] = edit any amv content
 features[user_permission][] = edit own amv content
-features[uuid_node][] = 1723fa15-f773-450d-85f0-c9414f574087
 features[uuid_term][] = 000d2c81-e905-4717-9b6c-5685566cb933
 features[uuid_term][] = 0095287a-595b-4f8b-b91b-b8cb6b118769
 features[uuid_term][] = 00c43a94-9d00-4524-b192-b69b569775e6
