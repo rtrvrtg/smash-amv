@@ -1,5 +1,5 @@
 ; smash_2013_amv make file for d.o. usage
-core = "7.29"
+core = "7.32"
 api = "2"
 
 projects[drupal][version] = "7.29"
